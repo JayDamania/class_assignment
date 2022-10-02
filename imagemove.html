@@ -12,19 +12,6 @@
       height: 50px;
       margin: auto;
     }
-
-    #right {
-      display: none;
-      margin-left: -50%;
-    }
-
-    #left {
-      display: block;
-    }
-    div {
-      display: grid;
-      grid-template-columns: auto auto;
-    }
   </style>
   <body>
     <div>
@@ -35,28 +22,23 @@
         height="400px"
         id="left"
       />
-      <img
-        src="train.png"
-        alt=""
-        style="width: 40vw"
-        height="400px"
-        id="right"
-      />
       <br />
     </div>
-    <button onclick="moveitem()">Click to move image right</button>
-
-    <button onclick="moveitemleft()">Click to move image left</button>
-
-    <script>
-      function moveitem() {
-        document.getElementById("left").style.visibility = "hidden";
-        document.getElementById("right").style.display = "block";
-      }
-      function moveitemleft() {
-        document.getElementById("left").style = "display:block";
-        document.getElementById("right").style = "display:none";
-      }
-    </script>
+    <button onclick="moveRight()" onclick="init">
+      Click to move image right
+    </button>
   </body>
+
+  <script>
+    var imgObj = null;
+    function init() {
+      imgObj = document.getElementById("left");
+      imgObj.style.position = "relative";
+      imgObj.style.left = "0px";
+    }
+    function moveRight() {
+      imgObj.style.left = parseInt(imgObj.style.left) + 10 + "px";
+    }
+    window.onload = init;
+  </script>
 </html>
