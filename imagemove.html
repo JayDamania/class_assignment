@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    button {
+      width: 30vw;
+      height: 50px;
+      margin: auto;
+    }
+
+    #right {
+      display: none;
+    }
+
+    #left {
+      display: block;
+    }
+    div {
+      display: grid;
+      grid-template-columns: auto auto;
+      margin: 0%;
+    }
+  </style>
+  <body>
+    <div>
+      <img
+        src="train.png"
+        alt=""
+        style="width: 40vw"
+        height="400px"
+        id="left"
+      />
+      <img
+        src="train.png"
+        alt=""
+        style="width: 40vw"
+        height="400px"
+        id="right"
+      />
+      <br />
+    </div>
+    <button onclick="moveitem()">Click to move image right</button>
+
+    <button onclick="moveitemleft()">Click to move image left</button>
+
+    <script>
+      function moveitem() {
+        document.getElementById("left").style.visibility = "hidden";
+        document.getElementById("right").style.display = "block";
+      }
+      function moveitemleft() {
+        document.getElementById("left").style = "display:block";
+        document.getElementById("right").style = "display:none";
+      }
+    </script>
+  </body>
+</html>
